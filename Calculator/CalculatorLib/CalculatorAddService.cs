@@ -6,7 +6,12 @@ namespace CalculatorLib
     {
         public int Add(string value)
         {
-            throw new Exception();
+            if (String.IsNullOrWhiteSpace(value))
+            {
+                return 0;
+            }
+
+            throw new NotImplementedException();
         }
     }
 }
