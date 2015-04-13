@@ -6,12 +6,17 @@ namespace CalculatorLib
     {
         public int Add(string value)
         {
-            if (String.IsNullOrWhiteSpace(value))
+            var result = 0;
+            if (!String.IsNullOrWhiteSpace(value))
             {
-                return 0;
+                var array = value.Split(',');
+                for (var i = 0; i < array.Length; i++)
+                {
+                    result += int.Parse(array[i]);
+                }
             }
 
-            throw new NotImplementedException();
+            return result;
         }
     }
 }
