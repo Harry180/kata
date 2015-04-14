@@ -6,6 +6,7 @@ namespace Calculator.Tests
     {
         private CalculatorLib.CalculatorAddService _calculatorAddService = new CalculatorLib.CalculatorAddService();
 
+        #region 1
         [Fact]
         public void should_return_zero_when_value_as_a_empty_string()
         {
@@ -45,6 +46,26 @@ namespace Calculator.Tests
             Assert.Equal(expectedValue, result);
         }
 
+        #endregion
+
+        #region 2
+
+        [Fact]
+        public void should_return_correct_sum_for_undefined_number_of_numbers_delimited()
+        {
+            const string value = "1,2,3,4,5,6";
+            const int expectedValue = 21;
+
+            //act
+            var result = _calculatorAddService.Add(value);
+
+            //assert
+            Assert.Equal(expectedValue, result);
+        }
+
+        #endregion
+
+        #region 3
         [Fact]
         public void should_return_sum_of_values_with_newline_delimeter()
         {
@@ -70,5 +91,7 @@ namespace Calculator.Tests
             //assert
             Assert.Equal(expectedValue, result);
         }
+
+        #endregion
     }
 }
