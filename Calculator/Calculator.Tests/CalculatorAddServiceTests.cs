@@ -44,5 +44,18 @@ namespace Calculator.Tests
 
             Assert.Equal(expectedValue, result);
         }
+
+        [Fact]
+        public void should_return_sum_of_values_with_newline_delimeter()
+        {
+            const string value = "1\n2,3";
+            const int expectedValue = 6;
+
+            //act
+            var result = _calculatorAddService.Add(value);
+
+            //assert
+            Assert.Equal(expectedValue, result);
+        }
     }
 }
