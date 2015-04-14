@@ -9,7 +9,7 @@ namespace CalculatorLib
             var result = 0;
             if (!String.IsNullOrWhiteSpace(value))
             {
-                var array = value.Split(',');
+                var array = value.Split(new string[]{",","\n"}, StringSplitOptions.RemoveEmptyEntries);
                 for (var i = 0; i < array.Length; i++)
                 {
                     result += int.Parse(array[i]);
