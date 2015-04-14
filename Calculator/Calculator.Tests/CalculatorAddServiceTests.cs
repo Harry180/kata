@@ -57,5 +57,18 @@ namespace Calculator.Tests
             //assert
             Assert.Equal(expectedValue, result);
         }
+
+        [Fact]
+        public void should_return_zero_or_correct_sum_of_correct_values_in_incorrect_string()
+        {
+            const string value = "1,\n";
+            const int expectedValue = 1;
+
+            //act
+            var result = _calculatorAddService.Add(value);
+
+            //assert
+            Assert.Equal(expectedValue, result);
+        }
     }
 }
